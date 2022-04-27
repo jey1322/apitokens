@@ -22,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('v1/books', BookV1::class)
       ->only(['index','show', 'destroy'])
       ->middleware('auth:sanctum');
+
+Route::post('login', [App\Http\Controllers\Api\LoginController::class, 'login']);
